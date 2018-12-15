@@ -1,1 +1,1 @@
-# HitSounds
+# Hitsounds
