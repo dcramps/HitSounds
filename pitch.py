@@ -11,17 +11,17 @@ for soundPath in soundsPath.glob('**/*_src.wav'):
   soundName = str(soundPath.stem.replace("_src",""))
   folder = str(soundPath.parent)
 
-  midName = folder + "/" + soundName + "_mid"
-  lowName = folder + "/" + soundName + "_low"
-  highName = folder + "/" + soundName + "_high"
+  midName = folder + "/" + soundName + "_mid" + suffix
+  lowName = folder + "/" + soundName + "_low" + suffix
+  highName = folder + "/" + soundName + "_high" + suffix
 
   print("Writing " + soundName + " to " + folder)
   print("...Mid")
   sound = AudioSegment.from_file(soundPath, format="wav")
   sound.export(midName, format="wav")
 
-  octaves_high = 1.75
-  octaves_low = -1.75
+  octaves_high = 1.5
+  octaves_low = -1.5
 
   sample_high = int(sound.frame_rate * (2.0 ** octaves_high))
 
